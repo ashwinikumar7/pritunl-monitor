@@ -1,0 +1,53 @@
+# Pritunl VPN Auto-Reconnect Monitor — Configuration
+# Copy this file to ~/.pritunl-monitor/config and fill in the required values.
+#
+# This file is sourced as shell variables by pritunl-monitor.sh.
+# Lines starting with # are comments. Blank lines are ignored.
+
+# ============================================================
+# Required Parameters
+# ============================================================
+
+# Profile ID assigned by the pritunl-client CLI after import.
+# Auto-populated by install.sh — do not edit manually unless
+# you know the CLI-assigned profile ID.
+PROFILE_ID=""
+
+# Static PIN required by the Pritunl server for authentication.
+STATIC_PIN=""
+
+# TOTP (Time-based One-Time Password) base32 shared secret.
+# Used to generate 6-digit MFA codes for reconnection.
+TOTP_SECRET=""
+
+# ============================================================
+# CLI Path
+# ============================================================
+
+# Full path to the pritunl-client binary.
+PRITUNL_CLIENT="/Applications/Pritunl.app/Contents/Resources/pritunl-client"
+
+# ============================================================
+# Optional Parameters (defaults shown)
+# ============================================================
+
+# Seconds between health checks.
+# CHECK_INTERVAL=30
+
+# Initial retry delay in seconds (first backoff).
+# INITIAL_BACKOFF=10
+
+# Maximum backoff cap in seconds (5 minutes).
+# MAX_BACKOFF=300
+
+# Consecutive reconnection failures before a 15-minute pause.
+# MAX_RETRIES=10
+
+# Path to the monitor log file.
+# LOG_FILE="$HOME/.pritunl-monitor/monitor.log"
+
+# Maximum log file size in bytes before rotation (10 MB).
+# MAX_LOG_SIZE=10485760
+
+# Number of rotated log files to keep.
+# LOG_ROTATE_COUNT=3
