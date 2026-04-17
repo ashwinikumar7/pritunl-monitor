@@ -1,6 +1,6 @@
 #!/bin/bash
 # install.sh — Install Pritunl VPN Auto-Reconnect Monitor
-# Usage: curl -fsSL https://raw.githubusercontent.com/ashwinikumar7/pritunl-monitor/main/install.sh | bash
+# Usage: curl -fsSL https://raw.githubusercontent.com/ashwinikumar7/pritunl-monitor/master/install.sh | bash
 
 set -euo pipefail
 
