@@ -8,7 +8,7 @@ CONFIG_DIR="$HOME/.pritunl-monitor"
 PLIST_NAME="com.user.pritunl-monitor"
 PLIST_DST="$HOME/Library/LaunchAgents/$PLIST_NAME.plist"
 PRITUNL_CLIENT="/Applications/Pritunl.app/Contents/Resources/pritunl-client"
-BASE_URL="https://raw.githubusercontent.com/ashwinikumar7/pritunl-monitor/main"
+BASE_URL="https://raw.githubusercontent.com/ashwinikumar7/pritunl-monitor/master"
 
 info()  { printf '\033[32m[INFO]\033[0m  %s\n' "$*"; }
 warn()  { printf '\033[33m[WARN]\033[0m  %s\n' "$*"; }
@@ -69,7 +69,7 @@ info "TOTP verified"
 mkdir -p "$CONFIG_DIR"
 
 info "Downloading scripts..."
-curl -fsSL "$BASE_URL/pritunl-monitor" -o "$CONFIG_DIR/pritunl-monitor.sh"
+curl -fsSL "$BASE_URL/pritunl-monitor.sh" -o "$CONFIG_DIR/pritunl-monitor.sh"
 curl -fsSL "$BASE_URL/uninstall.sh" -o "$CONFIG_DIR/uninstall.sh"
 chmod +x "$CONFIG_DIR/pritunl-monitor.sh" "$CONFIG_DIR/uninstall.sh"
 info "Scripts installed to $CONFIG_DIR"
