@@ -5,7 +5,7 @@ Monitors your Pritunl VPN connection on macOS and auto-reconnects when it drops 
 ## Quick Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ashwinikumar7/pritunl-monitor/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/ashwinikumar7/pritunl-monitor/master/install.sh | bash
 ```
 
 The installer will:
