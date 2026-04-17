@@ -5,7 +5,7 @@ Monitors your Pritunl VPN connection on macOS and auto-reconnects when it drops 
 ## Quick Install
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/Battery-Smart/devops/main/pritunl-monitor/install.sh)
+curl -fsSL https://raw.githubusercontent.com/ashwinikumar7/pritunl-monitor/main/install.sh | bash
 ```
 
 The installer will:
@@ -21,7 +21,6 @@ The installer will:
 - macOS with [Pritunl Client](https://client.pritunl.com/) installed
 - Your Pritunl profile `.tar` file (from the Pritunl server web console)
 - Your static PIN and TOTP base32 secret
-- A GitHub PAT with read access to this repo
 - [Homebrew](https://brew.sh)
 
 ## Commands
@@ -59,3 +58,15 @@ Config file: `~/.pritunl-monitor/config`
 | Log | `~/.pritunl-monitor/monitor.log` |
 | LaunchAgent | `~/Library/LaunchAgents/com.user.pritunl-monitor.plist` |
 | Uninstall | `~/.pritunl-monitor/uninstall.sh` |
+
+## Uninstall
+
+```bash
+vpn-uninstall
+```
+
+Or directly:
+
+```bash
+~/.pritunl-monitor/uninstall.sh
+```
