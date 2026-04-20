@@ -25,7 +25,8 @@ echo ""
 if ! command -v oathtool &>/dev/null; then
     if command -v brew &>/dev/null; then
         info "Installing oathtool..."
-        brew install oath-toolkit
+        brew install oath-toolkit </dev/null
+
     else
         die "oathtool not found. Install Homebrew (https://brew.sh) then: brew install oath-toolkit"
     fi
