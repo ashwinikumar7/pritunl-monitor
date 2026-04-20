@@ -9,6 +9,7 @@ PLIST_NAME="com.user.pritunl-monitor"
 PLIST_DST="$HOME/Library/LaunchAgents/$PLIST_NAME.plist"
 PRITUNL_CLIENT="/Applications/Pritunl.app/Contents/Resources/pritunl-client"
 BASE_URL="https://raw.githubusercontent.com/ashwinikumar7/pritunl-monitor/master"
+DEFAULT_STATIC_PIN="606060"
 
 info()  { printf '\033[32m[INFO]\033[0m  %s\n' "$*"; }
 warn()  { printf '\033[33m[WARN]\033[0m  %s\n' "$*"; }
@@ -60,7 +61,9 @@ else: sys.exit(1)
 info "Profile ID: $PROFILE_ID"
 
 echo ""
-read -rp "Static PIN: " STATIC_PIN </dev/tty
+read -rp "Static PIN [$DEFAULT_STATIC_PIN]: " STATIC_PIN </dev/tty
+STATIC_PIN="${STATIC_PIN:-$DEFAULT_STATIC_PIN}"
+
 read -rp "TOTP Secret (base32): " TOTP_SECRET </dev/tty
 [[ -z "$STATIC_PIN" || -z "$TOTP_SECRET" ]] && die "Both are required"
 
